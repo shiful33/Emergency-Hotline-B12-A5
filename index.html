@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="overflow-x-hidden" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Service Directory</title>
     <!-- DaisyUI CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" /> -->
     <!-- Tailwind CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Font Awesome CDN -->
@@ -14,28 +14,238 @@
 
     
 </head>
-<body>
-    <header>
-        <div class="flex justify-between w-full mx-16">
-            <div>
-            <img src="./assets/logo.png" alt="">
-            <h2>Emergency<br>Service</h2>
+<body class="overflow-x-hidden">
+    <!-- Header Section Start Here -->
+    <header class="w-[436px] md:w-full primary-font">
+        <div class="grid grid-cols-1 items-center md:flex flex-wrap md:justify-between mx-16 my-[24px]">
+            <div class="flex justify-center md:justify-start gap-[10px]">
+            <img src="./assets/logo.png" class="w-[50px] h-[50px]" alt="">
+            <h2 class="text-[24px] text-[#006747] font-bold leading-6">Emergency<br>Service</h2>
             </div>
-            <div class="flex">
-            <span>0 <img src="./assets/heart.png" alt=""> </span>
-            <span>100 <img src="./assets/coin.png" alt=""> </span>
-            <span>2 Copy</span>
+            <div class="grid md:flex gap-[20px] mt-[40px] md:mt-0">
+            <div class="flex gap-[10px] py-[12px] px-[24px] bg-[#41ff6b1a] rounded-[50px] text-center justify-center items-center">
+                <span class="secondary-font text-[16px] font-black ">0</span>
+                <img src="./assets/heart.png" class="w-[30px] h-[30px]" alt="">
+            </div>
+            <div class="flex gap-[10px] py-[12px] px-[20px] bg-[#41ff6b1a] rounded-[50px] text-center items-center justify-center">
+                <span class="secondary-font text-[16px] font-black ">100</span>
+                <img src="./assets/coin.png" class="w-[30px] h-[30px]" alt="">
+            </div>
+            <div>
+                <p class="secondary-font flex gap-[10px] py-[12px] px-[36px] bg-[#00a63e] rounded-[50px] text-[16px] font-semibold text-[#FFFFFF] text-center items-center justify-center">2 Copy</p>
+            </div>
             </div>
         </div>
     </header>
 
+    <!-- Banner Section Start Here -->
     <banner>
-
+        <div class="w-[436px] md:w-full min-h-[239px] flex items-center justify-center py-[30px] md:py-[12px] text-center bg-[linear-gradient(90deg,rgba(1.25,49.64,34.61,1),rgba(0,103,71,1)_50%,rgba(1,50,35,1)_100%)]">
+            <div class="primary-font ">
+                <img src="./assets/logo.png" class="w-[92px] h-[92px] mx-auto" alt="">
+                <h1 class="text-[26px] md:text-[40px] text-[#FFFFFF] font-bold my-[11px]">Emergency Service Directory</h1>
+                <p class="text-[16px] md:text-[20px] text-[#FFFFFF] font-semibold">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+            </div>
+        </div>
     </banner>
 
+    <!-- Main Section Start Here -->
+    <main id="box-info" class="grid w-11/12 md:grid-cols-12 gap-20 mx-auto mb-[44px] md:mb-[86px]">
+    <section id="cart-box" class="col-span-3 md:col-span-9 ">
+    <div class="grid grid-cols-1 gap-20 md:grid-cols-3">
+        <!-- Card-1 -->
+    <div class="card-1 shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px] mx-auto md:mx-0">
+    <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
+        <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
+            <img src="./assets/emergency.png" class="w-[32px] h-[32px]" alt="">
+        </div>
+        <i class="cursor-pointer fa-regular fa-heart"></i>
+    </div>
+    <div class="card-info primary-font p-[24px] md:p-[32px]">
+      <h2 class="card-title text-[24px] font-bold">National Emergency Number</h2>
+      <p class="text-[18px] font-normal mb-[24px]">National Emergency</p>
+      <h2 class="text-[32px] font-bold">999</h2>
+      <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[53px] h-[30px] rounded-[50px]">All</p>
+    </div>
+    <div class="flex justify-center gap-2">
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
+      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+    </div>
+</div>
 
-    <main>
+<!-- Card-2 -->
+<div class="card-2  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+    <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
+        <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
+            <img src="./assets/police.png" class="w-[32px] h-[32px]" alt="">
+        </div>
+        <i class="cursor-pointer fa-regular fa-heart"></i>
+    </div>
+    <div class="card-info primary-font p-[32px]">
+      <h2 class="card-title text-[24px] font-bold">Police Helpline Number</h2>
+      <p class="text-[18px] font-normal mb-[24px]">Police</p>
+      <h2 class="text-[32px] font-bold">999</h2>
+      <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[73px] h-[30px] rounded-[50px]">Police</p>
+    </div>
+    <div class="flex justify-center gap-2">
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
+      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+    </div>
+</div>
+<!-- Card-3 -->
+<div class="card-3  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+    <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
+        <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
+            <img src="./assets/fire-service.png" class="w-[32px] h-[32px]" alt="">
+        </div>
+        <i class="cursor-pointer fa-regular fa-heart"></i>
+    </div>
+    <div class="card-info primary-font p-[32px]">
+      <h2 class="card-title text-[24px] font-bold">Fire Service Number</h2>
+      <p class="text-[18px] font-normal mb-[24px]">Fire Service</p>
+      <h2 class="text-[32px] font-bold">999</h2>
+      <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[63px] h-[30px] rounded-[50px]">Fire</p>
+    </div>
+    <div class="flex justify-center gap-2">
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
+      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+    </div>
+</div>
 
+<!-- Card-4 -->
+    <div class="card-4  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+    <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
+        <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
+            <img src="./assets/ambulance.png" class="w-[32px] h-[32px]" alt="">
+        </div>
+        <i class="cursor-pointer fa-regular fa-heart"></i>
+    </div>
+    <div class="card-info primary-font p-[32px]">
+      <h2 class="card-title text-[24px] font-bold">Ambulance Service</h2>
+      <p class="text-[18px] font-normal mb-[24px]">Ambulance</p>
+      <h2 class="text-[32px] font-bold">1994-999999</h2>
+      <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[73px] h-[30px] rounded-[50px]">Health</p>
+    </div>
+    <div class="flex justify-center gap-2">
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
+      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+    </div>
+</div>
+
+<!-- Card-5 -->
+<div class="card-5  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+    <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
+        <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
+            <img src="./assets/emergency.png" class="w-[32px] h-[32px]" alt="">
+        </div>
+        <i class="cursor-pointer fa-regular fa-heart"></i>
+    </div>
+    <div class="card-info primary-font p-[32px]">
+      <h2 class="card-title text-[24px] font-bold">Women & Child Helpline</h2>
+      <p class="text-[18px] font-normal mb-[24px]">Women & Child Helpline</p>
+      <h2 class="text-[32px] font-bold">109</h2>
+      <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[63px] h-[30px] rounded-[50px]">Help</p>
+    </div>
+    <div class="flex justify-center gap-2">
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
+      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+    </div>
+</div>
+<!-- Card-6 -->
+<div class="card-6  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+    <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
+        <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
+            <img src="./assets/fire-service.png" class="w-[32px] h-[32px]" alt="">
+        </div>
+        <i class="cursor-pointer fa-regular fa-heart"></i>
+    </div>
+    <div class="card-info primary-font p-[32px]">
+      <h2 class="card-title text-[24px] font-bold">Anti-Corruption Helpline</h2>
+      <p class="text-[18px] font-normal mb-[24px]">Anti-Corruption</p>
+      <h2 class="text-[32px] font-bold">106</h2>
+      <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[63px] h-[30px] rounded-[50px]">Govt.</p>
+    </div>
+    <div class="flex justify-center gap-2">
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
+      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+    </div>
+</div>
+
+<!-- Card-7 -->
+    <div class="card-7  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+    <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
+        <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
+            <img src="./assets/emergency.png" class="w-[32px] h-[32px]" alt="">
+        </div>
+        <i class="cursor-pointer fa-regular fa-heart"></i>
+    </div>
+    <div class="card-info primary-font p-[32px]">
+      <h2 class="card-title text-[24px] font-bold">Electricity Helpline</h2>
+      <p class="text-[18px] font-normal mb-[24px]">Electricity Outage</p>
+      <h2 class="text-[32px] font-bold">16216</h2>
+      <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[105px] h-[30px] rounded-[50px]">Electricity</p>
+    </div>
+    <div class="flex justify-center gap-2">
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
+      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+    </div>
+</div>
+
+<!-- Card-8 -->
+<div class="card-8  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+    <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
+        <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
+            <img src="./assets/emergency.png" class="w-[32px] h-[32px]" alt="">
+        </div>
+        <i class="cursor-pointer fa-regular fa-heart"></i>
+    </div>
+    <div class="card-info primary-font p-[32px]">
+      <h2 class="card-title text-[24px] font-bold">Brac Helpline</h2>
+      <p class="text-[18px] font-normal mb-[24px]">Brac</p>
+      <h2 class="text-[32px] font-bold">16445</h2>
+      <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[63px] h-[30px] rounded-[50px]">NGO</p>
+    </div>
+    <div class="flex justify-center gap-2">
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
+      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+    </div>
+</div>
+<!-- Card-9 -->
+<div class="card-9  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+    <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
+        <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
+            <img src="./assets/fire-service.png" class="w-[32px] h-[32px]" alt="">
+        </div>
+        <i class="cursor-pointer fa-regular fa-heart"></i>
+    </div>
+    <div class="card-info primary-font p-[32px]">
+      <h2 class="card-title text-[24px] font-bold">Bangladesh Railway Helpline </h2>
+      <p class="text-[18px] font-normal mb-[24px]">Bangladesh Railway </p>
+      <h2 class="text-[32px] font-bold">163</h2>
+      <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[70px] h-[30px] rounded-[50px]">Travel</p>
+    </div>
+    <div class="flex justify-center gap-2">
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
+      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+    </div>
+</div>
+    </div>
+    </section>
+
+    <section id="cart-history" class="md:grid col-span-3  w-[400px] min-h-[1140px] shadow-lg md:mt-[48px] rounded-[12px]">
+      <div class="grid-cols-1 primary-font">
+        <div class="flex items-center justify-between p-[24px]">
+           <div class="flex items-center">
+            <i class="fa-regular fa-clock mr-[8px]"></i>
+            <h2 class="text-[20px] font-medium">Call History</h2>
+           </div>
+           <button id="clearBtn" class="clear-btn px-[36px] py-[12px] rounded-[50px] btn-bg text-[16px] text-[#FFFFFF] font-semibold cursor-pointer">Clear</button>
+        </div>
+        <div id="history">
+
+        </div>
+      </div>
+    </section>
     </main>
 
 
