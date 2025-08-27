@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Service Directory</title>
-    <!-- DaisyUI CDN -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" /> -->
     <!-- Tailwind CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- Style LinkUp -->
     <link rel="stylesheet" href="./style/style.css">
 
     
 </head>
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden bg-[#F5FFF6]">
     <!-- Header Section Start Here -->
-    <header class="w-[436px] md:w-full primary-font">
+    <header class="w-[436px] md:w-full primary-font bg-[#F5FFF6]">
         <div class="grid grid-cols-1 items-center md:flex flex-wrap md:justify-between mx-16 my-[24px]">
             <div class="flex justify-center md:justify-start gap-[10px]">
             <img src="./assets/logo.png" class="w-[50px] h-[50px]" alt="">
@@ -24,7 +23,7 @@
             </div>
             <div class="grid md:flex gap-[20px] mt-[40px] md:mt-0">
             <div class="flex gap-[10px] py-[12px] px-[24px] bg-[#41ff6b1a] rounded-[50px] text-center justify-center items-center">
-                <span class="secondary-font text-[16px] font-black ">0</span>
+                <span id="heart-countA" class="secondary-font text-[16px] font-black ">0</span>
                 <img src="./assets/heart.png" class="w-[30px] h-[30px]" alt="">
             </div>
             <div class="flex gap-[10px] py-[12px] px-[20px] bg-[#41ff6b1a] rounded-[50px] text-center items-center justify-center">
@@ -32,7 +31,7 @@
                 <img src="./assets/coin.png" class="w-[30px] h-[30px]" alt="">
             </div>
             <div>
-                <p class="secondary-font flex gap-[10px] py-[12px] px-[36px] bg-[#00a63e] rounded-[50px] text-[16px] font-semibold text-[#FFFFFF] text-center items-center justify-center">2 Copy</p>
+                <p class="secondary-font flex gap-[10px] py-[12px] px-[36px] bg-[#00a63e] rounded-[50px] text-[16px] font-semibold text-[#FFFFFF] text-center items-center justify-center"> Copy</p>
             </div>
             </div>
         </div>
@@ -50,16 +49,16 @@
     </banner>
 
     <!-- Main Section Start Here -->
-    <main id="box-info" class="grid w-11/12 md:grid-cols-12 gap-20 mx-auto mb-[44px] md:mb-[86px]">
-    <section id="cart-box" class="col-span-3 md:col-span-9 ">
+    <main id="box-info" class="grid w-11/12 min-h-screen md:grid-cols-12 gap-20 mx-auto mb-[44px] md:mb-[86px] bg-[#F5FFF6]">
+    <section id="cart-box" class="col-span-3 md:col-span-9">
     <div class="grid grid-cols-1 gap-20 md:grid-cols-3">
         <!-- Card-1 -->
-    <div class="card-1 shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px] mx-auto md:mx-0">
+    <div class="card-1 shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px] mx-auto md:mx-0 bg-[#FFFFFF]">
     <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
         <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
             <img src="./assets/emergency.png" class="w-[32px] h-[32px]" alt="">
         </div>
-        <i class="cursor-pointer fa-regular fa-heart"></i>
+        <i class="heart-btn cursor-pointer fa-regular fa-heart text-[24px]"></i>
     </div>
     <div class="card-info primary-font p-[24px] md:p-[32px]">
       <h2 class="card-title text-[24px] font-bold">National Emergency Number</h2>
@@ -68,18 +67,23 @@
       <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[53px] h-[30px] rounded-[50px]">All</p>
     </div>
     <div class="flex justify-center gap-2">
-      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
-      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-medium border-1 border-gray-200 rounded-[8px] gap-[6px] hover:bg-[#161616] hover:text-[#FFFFFF] cursor-pointer"><i class="fa-regular fa-copy"></i>  Copy</div>
+      <button id="call-btn1" class="flex justify-center items-center border-none badge badge-outline w-[182px] h-[40px] text-[16] font-medium text-[#FFFFFF] bg-[#00A63E] hover:bg-[#00130d] rounded-[8px] gap-[6px] cursor-pointer"><i class="fa-solid fa-phone"></i> Call</button>
+          <div class="flex text-center shadow-lg primary-font">
+            <h2 id="alert-notification" class="fixed z-100 hidden px-6 py-12 transform -translate-x-1/2 rounded-lg shadow-lg top-4 left-1/2 bg-[#00130D] text-[#FFFFFF]"><i class="mr-2 text-red-600 fa-solid fa-phone-volume"></i> Calling National Emergency Service 999...
+            <button id="ok-btn" class="bg-[#FFFFFF] text-black text-[16px] font-medium px-2 py-1 rounded ml-2 cursor-pointer">Ok</button>
+            </h2>
+          </div>
     </div>
 </div>
 
 <!-- Card-2 -->
-<div class="card-2  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+<div class="card-2  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px] bg-[#FFFFFF]">
     <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
         <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
             <img src="./assets/police.png" class="w-[32px] h-[32px]" alt="">
         </div>
-        <i class="cursor-pointer fa-regular fa-heart"></i>
+        <i class="heart-btn cursor-pointer fa-regular fa-heart text-[24px]"></i>
     </div>
     <div class="card-info primary-font p-[32px]">
       <h2 class="card-title text-[24px] font-bold">Police Helpline Number</h2>
@@ -88,17 +92,22 @@
       <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[73px] h-[30px] rounded-[50px]">Police</p>
     </div>
     <div class="flex justify-center gap-2">
-      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
-      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-medium border-1 border-gray-200 rounded-[8px] gap-[6px] hover:bg-[#161616] hover:text-[#FFFFFF] cursor-pointer"><i class="fa-regular fa-copy"></i>  Copy</div>
+      <button id="call-btn2" class="flex justify-center items-center border-none badge badge-outline w-[182px] h-[40px] text-[16] font-medium text-[#FFFFFF] bg-[#00A63E] hover:bg-[#00130d] rounded-[8px] gap-[6px] cursor-pointer"><i class="fa-solid fa-phone"></i> Call</button>
+          <div class="flex text-center shadow-lg primary-font">
+            <h2 id="alert-notification2" class="fixed z-100 hidden px-6 py-12 transform -translate-x-1/2 rounded-lg shadow-lg top-4 left-1/2 bg-[#00130D] text-[#FFFFFF]"><i class="mr-2 text-red-600 fa-solid fa-phone-volume"></i> Calling National Emergency Service 999...
+            <button id="ok-btn2" class="bg-[#FFFFFF] text-black text-[16px] font-medium px-2 py-1 rounded ml-2 cursor-pointer">Ok</button>
+            </h2>
+          </div>
     </div>
 </div>
 <!-- Card-3 -->
-<div class="card-3  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+<div class="card-3  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px] bg-[#FFFFFF]">
     <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
         <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
             <img src="./assets/fire-service.png" class="w-[32px] h-[32px]" alt="">
         </div>
-        <i class="cursor-pointer fa-regular fa-heart"></i>
+        <i class="heart-btn cursor-pointer fa-regular fa-heart text-[24px]"></i>
     </div>
     <div class="card-info primary-font p-[32px]">
       <h2 class="card-title text-[24px] font-bold">Fire Service Number</h2>
@@ -107,18 +116,23 @@
       <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[63px] h-[30px] rounded-[50px]">Fire</p>
     </div>
     <div class="flex justify-center gap-2">
-      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
-      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-medium border-1 border-gray-200 rounded-[8px] gap-[6px] hover:bg-[#161616] hover:text-[#FFFFFF] cursor-pointer"><i class="fa-regular fa-copy"></i>  Copy</div>
+      <button id="call-btn3" class="flex justify-center items-center border-none badge badge-outline w-[182px] h-[40px] text-[16] font-medium text-[#FFFFFF] bg-[#00A63E] hover:bg-[#00130d] rounded-[8px] gap-[6px] cursor-pointer"><i class="fa-solid fa-phone"></i> Call</button>
+          <div class="flex text-center shadow-lg primary-font">
+            <h2 id="alert-notification3" class="fixed z-100 hidden px-6 py-12 transform -translate-x-1/2 rounded-lg shadow-lg top-4 left-1/2 bg-[#00130D] text-[#FFFFFF]"><i class="mr-2 text-red-600 fa-solid fa-phone-volume"></i> Calling National Emergency Service 999...
+            <button id="ok-btn3" class="bg-[#FFFFFF] text-black text-[16px] font-medium px-2 py-1 rounded ml-2 cursor-pointer">Ok</button>
+            </h2>
+          </div>
     </div>
 </div>
 
 <!-- Card-4 -->
-    <div class="card-4  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+    <div class="card-4  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px] bg-[#FFFFFF]">
     <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
         <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
             <img src="./assets/ambulance.png" class="w-[32px] h-[32px]" alt="">
         </div>
-        <i class="cursor-pointer fa-regular fa-heart"></i>
+        <i class="heart-btn cursor-pointer fa-regular fa-heart text-[24px]"></i>
     </div>
     <div class="card-info primary-font p-[32px]">
       <h2 class="card-title text-[24px] font-bold">Ambulance Service</h2>
@@ -127,18 +141,23 @@
       <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[73px] h-[30px] rounded-[50px]">Health</p>
     </div>
     <div class="flex justify-center gap-2">
-      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
-      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-medium border-1 border-gray-200 rounded-[8px] gap-[6px] hover:bg-[#161616] hover:text-[#FFFFFF] cursor-pointer"><i class="fa-regular fa-copy"></i>  Copy</div>
+      <button id="call-btn4" class="flex justify-center items-center border-none badge badge-outline w-[182px] h-[40px] text-[16] font-medium text-[#FFFFFF] bg-[#00A63E] hover:bg-[#00130d] rounded-[8px] gap-[6px] cursor-pointer"><i class="fa-solid fa-phone"></i> Call</button>
+          <div class="flex text-center shadow-lg primary-font">
+            <h2 id="alert-notification4" class="fixed z-100 hidden px-6 py-12 transform -translate-x-1/2 rounded-lg shadow-lg top-4 left-1/2 bg-[#00130D] text-[#FFFFFF]"><i class="mr-2 text-red-600 fa-solid fa-phone-volume"></i> Calling National Emergency Service 1994-999999...
+            <button id="ok-btn4" class="bg-[#FFFFFF] text-black text-[16px] font-medium px-2 py-1 rounded ml-2 cursor-pointer">Ok</button>
+            </h2>
+          </div>
     </div>
 </div>
 
 <!-- Card-5 -->
-<div class="card-5  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+<div class="card-5  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px] bg-[#FFFFFF]">
     <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
         <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
             <img src="./assets/emergency.png" class="w-[32px] h-[32px]" alt="">
         </div>
-        <i class="cursor-pointer fa-regular fa-heart"></i>
+        <i class="heart-btn cursor-pointer fa-regular fa-heart text-[24px]"></i>
     </div>
     <div class="card-info primary-font p-[32px]">
       <h2 class="card-title text-[24px] font-bold">Women & Child Helpline</h2>
@@ -147,17 +166,22 @@
       <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[63px] h-[30px] rounded-[50px]">Help</p>
     </div>
     <div class="flex justify-center gap-2">
-      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
-      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-medium border-1 border-gray-200 rounded-[8px] gap-[6px] hover:bg-[#161616] hover:text-[#FFFFFF] cursor-pointer"><i class="fa-regular fa-copy"></i>  Copy</div>
+      <button id="call-btn5" class="flex justify-center items-center border-none badge badge-outline w-[182px] h-[40px] text-[16] font-medium text-[#FFFFFF] bg-[#00A63E] hover:bg-[#00130d] rounded-[8px] gap-[6px] cursor-pointer"><i class="fa-solid fa-phone"></i> Call</button>
+          <div class="flex text-center shadow-lg primary-font">
+            <h2 id="alert-notification5" class="fixed z-100 hidden px-6 py-12 transform -translate-x-1/2 rounded-lg shadow-lg top-4 left-1/2 bg-[#00130D] text-[#FFFFFF]"><i class="mr-2 text-red-600 fa-solid fa-phone-volume"></i> Calling National Emergency Service 109...
+            <button id="ok-btn5" class="bg-[#FFFFFF] text-black text-[16px] font-medium px-2 py-1 rounded ml-2 cursor-pointer">Ok</button>
+            </h2>
+          </div>
     </div>
 </div>
 <!-- Card-6 -->
-<div class="card-6  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+<div class="card-6  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px] bg-[#FFFFFF]">
     <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
         <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
             <img src="./assets/fire-service.png" class="w-[32px] h-[32px]" alt="">
         </div>
-        <i class="cursor-pointer fa-regular fa-heart"></i>
+        <i class="heart-btn cursor-pointer fa-regular fa-heart text-[24px]"></i>
     </div>
     <div class="card-info primary-font p-[32px]">
       <h2 class="card-title text-[24px] font-bold">Anti-Corruption Helpline</h2>
@@ -166,18 +190,23 @@
       <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[63px] h-[30px] rounded-[50px]">Govt.</p>
     </div>
     <div class="flex justify-center gap-2">
-      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
-      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-medium border-1 border-gray-200 rounded-[8px] gap-[6px] hover:bg-[#161616] hover:text-[#FFFFFF] cursor-pointer"><i class="fa-regular fa-copy"></i>  Copy</div>
+      <button id="call-btn6" class="flex justify-center items-center border-none badge badge-outline w-[182px] h-[40px] text-[16] font-medium text-[#FFFFFF] bg-[#00A63E] hover:bg-[#00130d] rounded-[8px] gap-[6px] cursor-pointer"><i class="fa-solid fa-phone"></i> Call</button>
+          <div class="flex text-center shadow-lg primary-font">
+            <h2 id="alert-notification6" class="fixed z-100 hidden px-6 py-12 transform -translate-x-1/2 rounded-lg shadow-lg top-4 left-1/2 bg-[#00130D] text-[#FFFFFF]"><i class="mr-2 text-red-600 fa-solid fa-phone-volume"></i> Calling National Emergency Service 106...
+            <button id="ok-btn6" class="bg-[#FFFFFF] text-black text-[16px] font-medium px-2 py-1 rounded ml-2 cursor-pointer">Ok</button>
+            </h2>
+          </div>
     </div>
 </div>
 
 <!-- Card-7 -->
-    <div class="card-7  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+    <div class="card-7  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px] bg-[#FFFFFF]">
     <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
         <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
             <img src="./assets/emergency.png" class="w-[32px] h-[32px]" alt="">
         </div>
-        <i class="cursor-pointer fa-regular fa-heart"></i>
+        <i class="heart-btn cursor-pointer fa-regular fa-heart text-[24px]"></i>
     </div>
     <div class="card-info primary-font p-[32px]">
       <h2 class="card-title text-[24px] font-bold">Electricity Helpline</h2>
@@ -186,18 +215,23 @@
       <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[105px] h-[30px] rounded-[50px]">Electricity</p>
     </div>
     <div class="flex justify-center gap-2">
-      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
-      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-medium border-1 border-gray-200 rounded-[8px] gap-[6px] hover:bg-[#161616] hover:text-[#FFFFFF] cursor-pointer"><i class="fa-regular fa-copy"></i>  Copy</div>
+      <button id="call-btn7" class="flex justify-center items-center border-none badge badge-outline w-[182px] h-[40px] text-[16] font-medium text-[#FFFFFF] bg-[#00A63E] hover:bg-[#00130d] rounded-[8px] gap-[6px] cursor-pointer"><i class="fa-solid fa-phone"></i> Call</button>
+          <div class="flex text-center shadow-lg primary-font">
+            <h2 id="alert-notification7" class="fixed z-100 hidden px-6 py-12 transform -translate-x-1/2 rounded-lg shadow-lg top-4 left-1/2 bg-[#00130D] text-[#FFFFFF]"><i class="mr-2 text-red-600 fa-solid fa-phone-volume"></i> Calling National Emergency Service 16216...
+            <button id="ok-btn7" class="bg-[#FFFFFF] text-black text-[16px] font-medium px-2 py-1 rounded ml-2 cursor-pointer">Ok</button>
+            </h2>
+          </div>
     </div>
 </div>
 
 <!-- Card-8 -->
-<div class="card-8  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+<div class="card-8  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px] bg-[#FFFFFF]">
     <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
         <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
             <img src="./assets/emergency.png" class="w-[32px] h-[32px]" alt="">
         </div>
-        <i class="cursor-pointer fa-regular fa-heart"></i>
+        <i class="heart-btn cursor-pointer fa-regular fa-heart text-[24px]"></i>
     </div>
     <div class="card-info primary-font p-[32px]">
       <h2 class="card-title text-[24px] font-bold">Brac Helpline</h2>
@@ -206,17 +240,22 @@
       <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[63px] h-[30px] rounded-[50px]">NGO</p>
     </div>
     <div class="flex justify-center gap-2">
-      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
-      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-medium border-1 border-gray-200 rounded-[8px] gap-[6px] hover:bg-[#161616] hover:text-[#FFFFFF] cursor-pointer"><i class="fa-regular fa-copy"></i>  Copy</div>
+      <button id="call-btn8" class="flex justify-center items-center border-none badge badge-outline w-[182px] h-[40px] text-[16] font-medium text-[#FFFFFF] bg-[#00A63E] hover:bg-[#00130d] rounded-[8px] gap-[6px] cursor-pointer"><i class="fa-solid fa-phone"></i> Call</button>
+          <div class="flex text-center shadow-lg primary-font">
+            <h2 id="alert-notification8" class="fixed z-100 hidden px-6 py-12 transform -translate-x-1/2 rounded-lg shadow-lg top-4 left-1/2 bg-[#00130D] text-[#FFFFFF]"><i class="mr-2 text-red-600 fa-solid fa-phone-volume"></i> Calling National Emergency Service 16445...
+            <button id="ok-btn8" class="bg-[#FFFFFF] text-black text-[16px] font-medium px-2 py-1 rounded ml-2 cursor-pointer">Ok</button>
+            </h2>
+          </div>
     </div>
 </div>
 <!-- Card-9 -->
-<div class="card-9  shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px]">
+<div class="card-9 shadow-lg w-full md:w-[436px] h-[380px] mt-[48px] rounded-[12px] bg-[#FFFFFF]">
     <div class="flex items-center gap-[289px] mt-[24px] px-[24px] md:px-[32px]">
         <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-[16px] flex justify-center items-center text-center">
             <img src="./assets/fire-service.png" class="w-[32px] h-[32px]" alt="">
         </div>
-        <i class="cursor-pointer fa-regular fa-heart"></i>
+        <i class="heart-btn cursor-pointer fa-regular fa-heart text-[24px]"></i>
     </div>
     <div class="card-info primary-font p-[32px]">
       <h2 class="card-title text-[24px] font-bold">Bangladesh Railway Helpline </h2>
@@ -225,21 +264,26 @@
       <p class=" text-center text-[18px] font-light bg-[#f2f2f2] w-[70px] h-[30px] rounded-[50px]">Travel</p>
     </div>
     <div class="flex justify-center gap-2">
-      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-normal border-1 border-gray-200 rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/copy.png" class="w-[16px] h-[16px]" alt="">  Copy</div>
-      <div class="flex justify-center items-center border-none badge badge-outline btn-bg w-[182px] h-[40px] text-[16] font-normal text-[#FFFFFF] rounded-[8px] gap-[6px] cursor-pointer"><img src="./assets/call.png" class="w-[16px] h-[16px]" alt=""> Call</div>
+      <div class="flex justify-center items-center w-[182px] h-[40px] text-[16] font-medium border-1 border-gray-200 rounded-[8px] gap-[6px] hover:bg-[#161616] hover:text-[#FFFFFF] cursor-pointer"><i class="fa-regular fa-copy"></i>  Copy</div>
+      <button id="call-btn9" class="flex justify-center items-center border-none badge badge-outline w-[182px] h-[40px] text-[16] font-medium text-[#FFFFFF] bg-[#00A63E] hover:bg-[#00130d] rounded-[8px] gap-[6px] cursor-pointer"><i class="fa-solid fa-phone"></i> Call</button>
+          <div class="flex text-center shadow-lg primary-font">
+            <h2 id="alert-notification9" class="fixed z-100 hidden px-6 py-12 transform -translate-x-1/2 rounded-lg shadow-lg top-4 left-1/2 bg-[#00130D] text-[#FFFFFF]"><i class="mr-2 text-red-600 fa-solid fa-phone-volume"></i> Calling National Emergency Service 163...
+            <button id="ok-btn9" class="bg-[#FFFFFF] text-black text-[16px] font-medium px-2 py-1 rounded ml-2 cursor-pointer">Ok</button>
+            </h2>
+          </div>
     </div>
 </div>
     </div>
     </section>
 
-    <section id="cart-history" class="md:grid col-span-3  w-[400px] min-h-[1140px] shadow-lg md:mt-[48px] rounded-[12px]">
+    <section id="cart-history" class="md:grid col-span-3  w-[400px] min-h-[1140px] shadow-lg md:mt-[48px] rounded-[12px] bg-[#FFFFFF]">
       <div class="grid-cols-1 primary-font">
         <div class="flex items-center justify-between p-[24px]">
            <div class="flex items-center">
             <i class="fa-regular fa-clock mr-[8px]"></i>
             <h2 class="text-[20px] font-medium">Call History</h2>
            </div>
-           <button id="clearBtn" class="clear-btn px-[36px] py-[12px] rounded-[50px] btn-bg text-[16px] text-[#FFFFFF] font-semibold cursor-pointer">Clear</button>
+           <button id="clearBtn" class="clear-btn px-[36px] py-[12px] rounded-[50px] bg-[#00A63E] hover:bg-[#01553A] text-[16px] text-[#FFFFFF] font-semibold cursor-pointer">Clear</button>
         </div>
         <div id="history">
 
