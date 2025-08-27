@@ -164,30 +164,65 @@ okBtn9.addEventListener('click', function() {
 
 // Call Button History Functionality -----
 
-const callBtns = document.getElementsByClassName('call-btn');
+// getElement('cart-box').addEventListener('click', function(e) {
+//   if (e.target.className.includes('call-btn')) {
+//     const callButton = e.target;
 
-for (const callButton of callBtns) {
-    callButton.addEventListener('click', function() {
+    // Coin Count Here -----
+    let coins = 100;
+    const coinCount = getElement('coin-count');
+
+    const callBtns = document.getElementsByClassName('call-btn');
+
+    for (const callButton of callBtns) {
+        callButton.addEventListener('click', function() {
         const notificationTitle = callButton.parentNode.parentNode.children[1].children[1].innerText;
 
         const notificationNumber = callButton.parentNode.parentNode.children[1].children[2].innerText;
         
         const callHistory = getElement('call-history');
+        
+        // Call history time -----
+        const now = new Date();
+        const timeString = now.toLocaleString([], { hour: '2-digit', minute: '2-digit', second: '2-digit'});
 
         const newCallHistory = document.createElement('div');
         newCallHistory.innerHTML =
-        `<div class="bg-[#F5FFF6] rounded-lg p-4 m-8"
+        `<div class="bg-[#F5FFF6] rounded-lg p-3 m-8"
+        <div class="flex justify-center items-center">
         <div>
-           <h2 class="text-[20px] font-medium">${notificationTitle}</h2>
-           <h2 class="text-[20px] font-medium">${notificationNumber}</h2>
-           </div>
+        <p class="text-[18px] font-medium">${notificationTitle}</p>
+        <p class="text-[18px] font-medium">${notificationNumber}</p>
+        </div>
+        <p class="text-[16px] font-normal"><span class="font-medium">Called at:</span> ${timeString}</p>
+        </div>
         </div>`;
 
         callHistory.append(newCallHistory);
-    });
-}
+
+        // Coin Count ----
+        if (coins >= 20) {
+            coins -= 20;
+            coinCount.innerText = coins;
+        } else {
+            alert('No more coins here please, add minimum 20 coins for calls!');
+        }
+    },
 
   getElement('clear-Btn').addEventListener('click', function() {
     const callHistory = getElement('call-history');
     callHistory.innerHTML = '';
   })
+)};
+
+// Copy alert and number copy functionality -----
+
+const copyAlerts = document.querySelectorAll('copyAlert');
+
+    copyAlerts.forEach(copyAlert => {
+        if (copyAlert.textContent.trim() === 'Copy') {
+            copyAlert.addEventListener('click', function() {
+                alert('Number copied successfully!');
+            })
+        }
+    })
