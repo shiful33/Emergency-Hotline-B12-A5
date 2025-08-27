@@ -217,12 +217,25 @@ okBtn9.addEventListener('click', function() {
 
 // Copy alert and number copy functionality -----
 
-const copyAlerts = document.querySelectorAll('copyAlert');
+let copyCount = 0;
+
+const copyAlerts = document.querySelectorAll('.copyAlert');
 
     copyAlerts.forEach(copyAlert => {
         if (copyAlert.textContent.trim() === 'Copy') {
             copyAlert.addEventListener('click', function() {
-                alert('Number copied successfully!');
-            })
+
+                const number = copyAlert.closest('.calling-number')?.querySelector('b, strong, p, span')?.textContent.trim() || '999';
+
+                navigator.clipboard.writeText(number).then(() => {
+                copyCount++;
+                alert('Number ' + number + ' copied successfully!');
+
+                document.querySelectorAll('.copy-box').forEach(box => {
+                  box.textContent = 'Copy (' + copyCount + ')';
+                });
+                })
+            });
         }
-    })
+    });
+   
