@@ -44,16 +44,18 @@ okBtn.addEventListener('click', function() {
 
 // Call Button Alert Functionality -----
 // ---  Card-1 ---
-const callBtn1 = getElement('call-btn1');
-const alertNotification1 = getElement('alert-notification');
-const okBtn1 = getElement('ok-btn');
+const callBtn = getElement('call-btn');
+const alertNotification = getElement('alert-notification');
+const okBtn = getElement('ok-btn');
+const callHistory = getElement('call-history');
+const historyList = getElement('history-list');
 
-callBtn1.addEventListener('click', function() {
-    alertNotification1.classList.remove('hidden');
+callBtn.addEventListener('click', function() {
+    alertNotification.classList.remove('hidden');
 });
 
-okBtn1.addEventListener('click', function() {
-    alertNotification1.classList.add('hidden');
+okBtn.addEventListener('click', function() {
+    alertNotification.classList.add('hidden');
 });
 
 // ---  Card-2 ---
@@ -159,3 +161,33 @@ callBtn9.addEventListener('click', function() {
 okBtn9.addEventListener('click', function() {
     alertNotification9.classList.add('hidden');
 });
+
+// Call Button History Functionality -----
+
+const callBtns = document.getElementsByClassName('call-btn');
+
+for (const callButton of callBtns) {
+    callButton.addEventListener('click', function() {
+        const notificationTitle = callButton.parentNode.parentNode.children[1].children[1].innerText;
+
+        const notificationNumber = callButton.parentNode.parentNode.children[1].children[2].innerText;
+        
+        const callHistory = getElement('call-history');
+
+        const newCallHistory = document.createElement('div');
+        newCallHistory.innerHTML =
+        `<div class="bg-[#F5FFF6] rounded-lg p-4 m-8"
+        <div>
+           <h2 class="text-[20px] font-medium">${notificationTitle}</h2>
+           <h2 class="text-[20px] font-medium">${notificationNumber}</h2>
+           </div>
+        </div>`;
+
+        callHistory.append(newCallHistory);
+    });
+}
+
+  getElement('clear-Btn').addEventListener('click', function() {
+    const callHistory = getElement('call-history');
+    callHistory.innerHTML = '';
+  })
