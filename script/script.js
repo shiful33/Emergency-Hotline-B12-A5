@@ -22,25 +22,6 @@ for( i = 0; i < heartBtns.length; i++ ) {
    });
 }
 
-// Call Button Alert Functionality -----
-
-/* const alertNotification = document.getElementById('alert-notification');
-const alertMessage = document.getElementById('alert-message');
-const okBtn = document.getElementById('ok-btn');
-
-const callButtons = document.querySelectorAll('.call-btn');
-
-for( let i = 0; i < callButtons.length; i++) {
-    callButtons[i].addEventListener('click', function() {
-        const number = this.getAttribute('data-number');
-        alertMessage.textContent = `Calling ${number}`;
-        alertNotification.classList.remove('hidden');
-    });
-}
-
-okBtn.addEventListener('click', function() {
-    alertNotification.classList.add('hidden');
-});  */
 
 // Call Button Alert Functionality -----
 // ---  Card-1 ---
@@ -215,27 +196,37 @@ okBtn9.addEventListener('click', function() {
   })
 )};
 
+
+
 // Copy alert and number copy functionality -----
 
-let copyCount = 0;
-
-const copyAlerts = document.querySelectorAll('.copyAlert');
-
-    copyAlerts.forEach(copyAlert => {
+    let copyCount = 0;
+   
+    document.querySelectorAll('.copyAlert').forEach(copyAlert => {
         if (copyAlert.textContent.trim() === 'Copy') {
             copyAlert.addEventListener('click', function() {
 
-                const number = copyAlert.closest('.calling-number')?.querySelector('b, strong, p, span')?.textContent.trim() || '999';
+                const card = copyAlert.closest('.card-box');
+
+                const title = 
+                card.querySelector('.service-title b, .service-title, strong, .service-title p, .service-title span')?.textContent.trim() || 'National Emergency';
+
+                const number = 
+                card.querySelector('.service-number b, .service-number, strong, .service-number p, .service-number span')?.textContent.trim() || '999';
 
                 navigator.clipboard.writeText(number).then(() => {
                 copyCount++;
-                alert('Number ' + number + ' copied successfully!');
+
+                alert(title + ' - ' + number + ' copied successfully!');
+
+                // alert(`${title} - ${number} copied successfully!`);
 
                 document.querySelectorAll('.copy-box').forEach(box => {
                   box.textContent = 'Copy (' + copyCount + ')';
                 });
-                })
+                });
             });
         }
     });
-   
+
+    
